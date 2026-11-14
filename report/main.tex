@@ -1,0 +1,55 @@
+\documentclass[oneside,a4paper,11pt,explicit]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[sedes]{kultem}
+\usepackage[english]{babel}
+\input{preamble}
+
+%% TITLE PAGE
+\title{Advanced Monte Carlo Simulations}
+\subtitle{Report on the exercises}
+\date{Academic year 2026--2027}
+\author{Mathias Meersschaut \\ r0998972}
+\professor{Enrico Carlon}
+
+\begin{document}
+\maketitle
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+% ---------------------------------------------------------------
+\unnumberedsection{Introduction}
+\input{sections/00-introduction}
+
+% ---------------------------------------------------------------
+% One file per problem. Required: 4.1-4.8 and 4.12-4.16.
+% Optional: at least one of 4.9, 4.10, 4.11 (comment out the ones you skip).
+\input{sections/4.01-non-uniform-random-numbers}
+\input{sections/4.02-gaussian-rng}
+\input{sections/4.03-mc-integration-1}
+\input{sections/4.04-mc-integration-2-metropolis}
+\input{sections/4.05-stochastic-matrices}
+\input{sections/4.06-detailed-balance}
+\input{sections/4.07-ising-uniform-sampling}
+\input{sections/4.08-ising-metropolis}
+\input{sections/4.09-potts-heat-bath}
+\input{sections/4.10-kawasaki-local}
+\input{sections/4.11-kawasaki-nonlocal}
+\input{sections/4.12-hard-disks}
+\input{sections/4.13-persistent-random-walk-continuous-time}
+\input{sections/4.14-birth-annihilation}
+\input{sections/4.15-lotka-volterra}
+\input{sections/4.16-brusselator}
+
+% ---------------------------------------------------------------
+\unnumberedsection{Statement on the use of AI}
+\input{sections/99-ai-statement}
+
+% ---------------------------------------------------------------
+\pagebreak
+\nocite{Carlon2025}  % the lecture notes are always cited
+\bibliographystyle{ieeetr}
+\bibliography{References}
+
+\end{document}

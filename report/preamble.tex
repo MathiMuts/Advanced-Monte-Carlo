@@ -1,0 +1,45 @@
+% ======================= report preamble =======================
+% Loaded from main.tex after kultem.sty (kul-template skill).
+% Do not edit kultem.sty itself; put additions here.
+
+% ---------- general packages ----------
+\usepackage{calc}                       % needed by \kulbox (\linewidth-2\fboxsep)
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,array}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\usepackage[accsupp]{axessibility}      % accessible PDF math (from the template)
+\usepackage{upgreek}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- paragraphs and lists ----------
+\setlength{\parskip}{0.5em plus 0.15em minus 0.1em}
+\setlist{itemsep=2pt,topsep=3pt,parsep=0pt,leftmargin=1.4em}
+\captionsetup{font=small,labelfont={bf,color=Blue3}}
+
+% ---------- section numbering like the lecture notes ----------
+% \exercise{n}{Title} starts the section for problem 4.n, so skipping an
+% optional problem (4.9-4.11) never shifts the numbering of the others.
+\renewcommand{\thesection}{4.\arabic{section}}
+\newcommand{\exercise}[2]{\setcounter{section}{\numexpr#1-1\relax}\section{#2}}
+
+% Unnumbered section that still appears in the TOC and the footer.
+\newcommand{\unnumberedsection}[1]{%
+  \section*{#1}\addcontentsline{toc}{section}{#1}\markboth{#1}{}}
+
+% Wider number column in the table of contents ("4.16" does not fit in 1.5em).
+\makeatletter
+\patchcmd{\l@section}{1.5em}{2.7em}{}{}
+\patchcmd{\l@subsection}{2.3em}{3.2em}{}{}
+\makeatother
+
+% ---------- figures ----------
+% Plots from the exercise scripts live in ../Exercises/<exercise>/figures/.
+% img/ is listed too, because kultem.sty loads its logos from img/.
+\graphicspath{{../Exercises/}{img/}}
+
+% ---------- notation ----------
+\newcommand{\Tc}{T_{\mathrm c}}
+\newcommand{\taueq}{\tau_{\mathrm{eq}}}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}

@@ -75,6 +75,7 @@ Exercises/
     README.md           question, relevant topics, links, deliverables, results log
     *.py / *.ipynb      simulation code
     figures/            generated plots for the report
+report/                 LaTeX source of the report, KU Leuven template (see report/README.md)
 CLAUDE.md               instructions for Claude Code (AI assistant) in this repo
 ```
 

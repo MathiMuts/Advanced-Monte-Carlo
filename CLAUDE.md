@@ -23,6 +23,14 @@ Exercises/
     README.md            # question, topics, links, deliverables, notes, results log
     *.py / *.ipynb       # code for that exercise
     figures/             # generated plots (png/pdf) used in the report
+report/
+  main.tex               # kultem class setup, title page fields, TOC, \input of all sections, bibliography
+  preamble.tex           # extra packages + report macros (\exercise, \graphicspath, ...)
+  kultem.sty, img/       # KU Leuven style + logos (from the kul-template skill, do not edit)
+  References.bib         # bibliography
+  build.py               # compile script: build / --watch / --keep / --clean
+  sections/4.XX-*.tex    # one file per problem, same names as the Exercises/ folders
+  README.md              # report conventions, build and QA steps
 README.md                # global overview + progress table
 ```
 
@@ -79,5 +87,33 @@ pages of the problem and of the related theory sections.
    and add a line to the "AI usage log" describing what you helped with (needed for the
    AI statement in the report).
 5. Update the progress table in the root `README.md` when an exercise's status changes.
+
+## Writing the report (`report/`)
+
+- Always use the **kul-template** skill (alias *kul latex / kul style / kul verslag /
+  kul report*). Load it before editing any `.tex` in `report/`. The report uses the
+  KU Leuven template (`kultem.sty`), **not** the latex-style house style: do not add the
+  latex-style preamble or its boxes (keybox, tip, warn, ...). The only box is
+  `\kulbox[5pt]{...}`, for the main result of a problem, at most once per page.
+- The report is in **English** (`babel` english), because the course is taught in English.
+- Never edit `report/kultem.sty` or `report/img/`. Extra packages and macros go in
+  `report/preamble.tex`, which is loaded after kultem. Keep `\title`/`\subtitle` in
+  `main.tex` short, because they are printed in the header band next to the logo.
+- Cite sources from `report/References.bib` (`\cite{Carlon2025}`, `\cite{Gillespie1977}`).
+  Add new entries there and protect capitals with braces.
+- Each problem goes in `report/sections/4.XX-<slug>.tex`. Start it with `\exercise{n}{Title}`
+  (this gives section 4.n). Use one `\subsection` per sub-question. Paraphrase the
+  question and never copy the notes verbatim.
+- Figures: `\graphicspath` is `../Exercises/` (plus `img/`), so use
+  `\includegraphics{4.XX-<slug>/figures/<name>}`. Export plots from Python as PDF, in a
+  sans-serif font and in the KU Leuven blues (`#1FABD5`, `#1D8DB0`, `#116E8A`) to match the
+  template. Every caption lists the simulation parameters (lattice size, T, number of
+  sweeps or samples, equilibration, seed).
+- All numbers in the text come from the scripts, with error bars and 2–3 significant figures.
+- After changes, compile with `python report/build.py`. It builds, prints errors and the
+  overfull count, and cleans the auxiliary files; `--watch` rebuilds continuously. It must
+  report zero `Overfull` boxes, and `pdffonts report/main.pdf` must show zero Type 3 fonts. Render
+  the pages with `pdftoppm` and check them by eye (header band, footer section name, figures).
+- Keep `sections/99-ai-statement.tex` up to date from the AI usage logs.
 
 Do not commit or push unless I ask.
