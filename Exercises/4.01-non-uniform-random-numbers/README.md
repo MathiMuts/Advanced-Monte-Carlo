@@ -2,7 +2,7 @@
 
 | Required | Type | Problem in notes | Status |
 |---|---|---|---|
-| ✅ yes | simulation (+ short proof) | [p. 31–32](../../Coursenotes/monte_carlo_2025.pdf#page=31) | ⬜ todo |
+| ✅ yes | simulation (+ short proof) | [p. 31–32](../../Coursenotes/monte_carlo_2025.pdf#page=31) | 🟨 in progress |
 
 ## Question
 
@@ -17,16 +17,16 @@ from uniform random numbers in $[0,1]$, using two methods:
 
 **Sub-questions**
 
-- [ ] (0) Prove that $y = F^{-1}(x)$ with $x\sim U[0,1]$ has density $f$.
-- [ ] (a) Inverse CDF — generate and histogram numbers distributed
-  - [ ] uniformly in $[-2, 1]$
-  - [ ] exponentially on $\mathbb{R}^+$: $f(x) = e^{-x}$ for $x\ge 0$
-  - [ ] linearly on $[-1,1]$: $f(x) = (x+1)/2$
-- [ ] (b) Hit-and-miss — generate and histogram numbers distributed
-  - [ ] linearly on $[-1,1]$: $f(x) = (x+1)/2$
-  - [ ] $f(x) = -x(1-x)\,e^{-x^2}\log(1-x)$ on $[0,1]$
-- [ ] (c) Hit-and-miss: points uniformly distributed inside a circle of radius $R=1$.
-- [ ] (d) Same uniform disk *without* hit-and-miss, using an appropriate density $f(r,\theta)$ in polar coordinates.
+- [x] (0) Prove that $y = F^{-1}(x)$ with $x\sim U[0,1]$ has density $f$.
+- [x] (a) Inverse CDF — generate and histogram numbers distributed
+  - [x] uniformly in $[-2, 1]$
+  - [x] exponentially on $\mathbb{R}^+$: $f(x) = e^{-x}$ for $x\ge 0$
+  - [x] linearly on $[-1,1]$: $f(x) = (x+1)/2$
+- [x] (b) Hit-and-miss — generate and histogram numbers distributed
+  - [x] linearly on $[-1,1]$: $f(x) = (x+1)/2$
+  - [x] $f(x) = -x(1-x)\,e^{-x^2}\log(1-x)$ on $[0,1]$
+- [x] (c) Hit-and-miss: points uniformly distributed inside a circle of radius $R=1$.
+- [x] (d) Same uniform disk *without* hit-and-miss, using an appropriate density $f(r,\theta)$ in polar coordinates.
 
 ## Relevant topics
 
