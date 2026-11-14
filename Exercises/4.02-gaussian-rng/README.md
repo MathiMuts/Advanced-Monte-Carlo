@@ -2,7 +2,7 @@
 
 | Required | Type | Problem in notes | Status |
 |---|---|---|---|
-| ✅ yes | simulation | [p. 32–33](../../Coursenotes/monte_carlo_2025.pdf#page=32) | ⬜ todo |
+| ✅ yes | simulation | [p. 32–33](../../Coursenotes/monte_carlo_2025.pdf#page=32) | 🟨 code done, report todo |
 
 ## Question
 
@@ -19,8 +19,8 @@ $F(r) = \int_0^r e^{-z^2/2} z\,dz$, then transform back to $(x, y)$.
 
 **Sub-questions**
 
-- [ ] (a) Program the algorithm and show that it generates pairs of normally distributed random variables.
-- [ ] (b) How must the algorithm be adapted to obtain Gaussian numbers with mean $\mu$ and variance $\sigma^2$?
+- [x] (a) Program the algorithm and show that it generates pairs of normally distributed random variables.
+- [x] (b) How must the algorithm be adapted to obtain Gaussian numbers with mean $\mu$ and variance $\sigma^2$?
 
 ## Relevant topics
 
@@ -63,4 +63,70 @@ Python's built-in `code` module, which IPython/Jupyter need. Thanks to
 
 ## Results & notes
 
-_To be filled in._
+All runs: $N = 100\,000$ pairs, `SEED = 1` (`np.random.default_rng`).
+
+### Derivation
+
+The radial density is $p(r) = r\,e^{-r^2/2}$ on $[0,\infty)$, so
+
+$$F(r) = \int_0^r e^{-z^2/2} z\,dz = 1 - e^{-r^2/2}
+\quad\Rightarrow\quad r = F^{-1}(u_1) = \sqrt{-2\ln(1-u_1)} ,$$
+
+and $\theta = 2\pi u_2$. Then $x = r\cos\theta$, $y = r\sin\theta$.
+The joint density factorises, $f(r,\theta) = \underbrace{r e^{-r^2/2}}_{r}\cdot\underbrace{\tfrac{1}{2\pi}}_{\theta}$,
+so $r$ and $\theta$ must be drawn from **two independent** uniforms $u_1, u_2$.
+Going back to Cartesian coordinates the density factorises again,
+$\frac{1}{2\pi}e^{-(x^2+y^2)/2} = \phi(x)\,\phi(y)$, so $x$ and $y$ are independent $\mathcal N(0,1)$.
+
+### (a) Pairs of normal random numbers
+
+| | mean | variance |
+|---|---|---|
+| $x$ | $-0.0033 \pm 0.0032$ | $0.9954$ |
+| $y$ | $+0.0072 \pm 0.0032$ | $1.0036$ |
+
+- Histograms of $x$ and $y$ follow the exact $\mathcal N(0,1)$ density
+  ([`box_muller_hist`](figures/box_muller_hist.png)).
+- The scatter plot of $(x,y)$ is a circularly symmetric cloud
+  ([`box_muller_xy`](figures/box_muller_xy.png)).
+- Correlation $\rho_{xy} = -0.0016$, compatible with $0 \pm 1/\sqrt N = 0 \pm 0.0032$.
+  ($\rho = 0$ alone does not prove independence; the factorisation above does.)
+- The mean of $y$ is $2.2$ standard errors from 0: a normal fluctuation for one seed.
+
+**Bug found:** using the same `u` for $r$ and $\theta$ makes $r$ a function of $\theta$,
+so all points lie on a spiral instead of a 2D Gaussian.
+
+### (b) Mean $\mu$ and variance $\sigma^2$
+
+Keep the algorithm and rescale the output: $x' = \mu + \sigma x$, $y' = \mu + \sigma y$.
+Then $\langle x'\rangle = \mu$, $\mathrm{Var}(x') = \sigma^2$, and $x'$ is still Gaussian
+(a linear change of variables, $dx = dx'/\sigma$, gives
+$\frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x'-\mu)^2/2\sigma^2}$).
+Equivalently, take $r = \sigma\sqrt{-2\ln(1-u_1)}$ and shift by $\mu$.
+
+With $\mu = 3$, $\sigma = 2$
+([`box_muller_hist_mu_sigma`](figures/box_muller_hist_mu_sigma.png),
+[`box_muller_xy_mu_sigma`](figures/box_muller_xy_mu_sigma.png)):
+
+| | mean (expected 3) | variance (expected 4) |
+|---|---|---|
+| $x'$ | $2.9934 \pm 0.0063$ | $3.9814$ |
+| $y'$ | $3.0145 \pm 0.0063$ | $4.0142$ |
+
+Different parameters per axis, $\mu = (3, -5)$, $\sigma = (2, 1)$, give an ellipse elongated along $x$
+([`box_muller_hist_mu_sigma_asym`](figures/box_muller_hist_mu_sigma_asym.png),
+[`box_muller_xy_mu_sigma_asym`](figures/box_muller_xy_mu_sigma_asym.png)):
+
+| | mean | variance |
+|---|---|---|
+| $x'$ | $2.9934 \pm 0.0063$ (expected 3) | $3.9814$ (expected 4) |
+| $y'$ | $-4.9928 \pm 0.0032$ (expected $-5$) | $1.0036$ (expected 1) |
+
+The rescaled samples are the same Box–Muller pairs, so their relative deviations are those of (a).
+
+### Answers to the exam questions
+
+- *Why polar coordinates?* The 1D Gaussian CDF (error function) has no closed-form inverse.
+  In 2D the Jacobian $r$ makes $r e^{-r^2/2}$ integrable in closed form, so $F^{-1}$ is explicit.
+- *Why are $x$ and $y$ independent?* Their joint density $\phi(x)\phi(y)$ factorises, which follows
+  from $r$ and $\theta$ being independent ($u_1$, $u_2$ independent).
