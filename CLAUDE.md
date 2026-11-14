@@ -88,9 +88,7 @@ pages of the problem and of the related theory sections.
    (Markdown + `$...$` math) or in LaTeX for the report.
 3. For simulation sub-questions, write/modify code in the exercise folder, run it, and
    check results against known values (exact solutions, analytical limits) where possible.
-4. Update the README: tick off the sub-question checkboxes, fill in "Results & notes",
-   and add a line to the "AI usage log" describing what you helped with (needed for the
-   AI statement in the report).
+4. Update the README: tick off the sub-question checkboxes and fill in "Results & notes".
 5. Update the progress table in the root `README.md` when an exercise's status changes.
 
 ## Writing the report (`report/`)
@@ -119,6 +117,5 @@ pages of the problem and of the related theory sections.
   overfull count, and cleans the auxiliary files; `--watch` rebuilds continuously. It must
   report zero `Overfull` boxes, and `pdffonts report/main.pdf` must show zero Type 3 fonts. Render
   the pages with `pdftoppm` and check them by eye (header band, footer section name, figures).
-- Keep `sections/99-ai-statement.tex` up to date from the AI usage logs.
 
 Do not commit or push unless I ask.
