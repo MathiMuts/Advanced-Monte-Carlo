@@ -62,7 +62,3 @@ Python's built-in `code` module, which IPython/Jupyter need. Thanks to
 ## Results & notes
 
 _To be filled in._
-
-## AI usage log
-
-_To be filled in._

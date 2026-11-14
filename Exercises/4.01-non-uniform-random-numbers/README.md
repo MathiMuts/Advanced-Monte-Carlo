@@ -71,8 +71,11 @@ Python's built-in `code` module, which IPython/Jupyter need. Thanks to
 
 ## Results & notes
 
-_To be filled in._
+From `code.ipynb` (seed = 1, 50 bins; inverse CDF and polar: N = 100,000; hit-and-miss: 200,000 tries).
 
-## AI usage log
-
-_To be filled in (what AI helped with, for the report's AI statement)._
+- **(a)** $x = -2+3u$, $x = -\log(1-u)$, $x = 2\sqrt u - 1$: histograms on top of $f$ ([`a_inverse_cdf`](figures/a_inverse_cdf.png)).
+- **(b)** Fraction kept = area under $f$ / $(M(b-a))$ ([`b_hit_and_miss`](figures/b_hit_and_miss.png)):
+  linear ($M=1$): 0.4994, expected 0.5; second function ($M = 0.1582$, area $Z = 0.09011$): 0.5694, expected 0.5697. Kept (blue) vs. thrown-away (red) points: [`b_hit_and_miss_points`](figures/b_hit_and_miss_points.png).
+- **(c)** Disk: kept $0.7847 \pm 0.0009$, expected $\pi/4 = 0.7854$, so $\pi \approx 3.139 \pm 0.004$.
+- **(d)** $\theta = 2\pi v$, $r = \sqrt u$. Distances follow $2r$ for (c) and (d); the wrong $r=u$ gives a flat
+  histogram and a pile-up at the centre ([`cd_disk_scatter`](figures/cd_disk_scatter.png), [`cd_radial_density`](figures/cd_radial_density.png)).

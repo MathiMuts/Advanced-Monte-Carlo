@@ -102,4 +102,4 @@ problem (fitted $\tau$, $z$, value of $I$, ...) and at most once per page.
 2. `pdffonts main.pdf | grep -c "Type 3"` = 0.
 3. Look over the rendered pages: no orphaned headings, readable figures, labelled axes, the right section in the footer.
 4. Every required problem (4.1–4.8, 4.12–4.16) and at least one of 4.9–4.11 is present.
-5. The AI statement is filled in from the AI usage logs in `Exercises/*/README.md`.
+5. The AI statement (`sections/99-ai-statement.tex`) is filled in.
