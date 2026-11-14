@@ -37,6 +37,18 @@ $$A = \begin{cases} 1 & r'^2 - r^2 < 0 \\ \exp\!\left(-\frac{r'^2-r^2}{2}\right)
 - Problem statement: [notes p. 34](../../Coursenotes/monte_carlo_2025.pdf#page=34)
 - Theory: [Ch. 2, p. 6–16](../../Coursenotes/monte_carlo_2025.pdf#page=6)
 
+## Files
+
+| File | Content |
+|---|---|
+| [`functions.py`](functions.py) | Long functions: samplers, simulations, analysis and plotting helpers (`save_figure`, `KUL_BLUES`). |
+| [`code.ipynb`](code.ipynb) | Runs the functions: parameters, data, figures and numbers for the report, one section per sub-question. |
+| [`figures/`](figures/) | Saved plots (`.png` + `.pdf`) used in the report. |
+
+The module is called `functions.py` and not `code.py`, because a `code.py` would hide
+Python's built-in `code` module, which IPython/Jupyter need. Thanks to
+`%autoreload 2`, edits to `functions.py` are picked up by the notebook without a kernel restart.
+
 ## Deliverables for the report
 
 - Trajectory plots (4 combinations of start point × $h$).

@@ -30,6 +30,18 @@ with $k_1 = 1$, $k_2 = 0.005$, $k_3 = 0.6$, initial state 100 prey and 20 predat
 - Problem statement: [notes p. 48](../../Coursenotes/monte_carlo_2025.pdf#page=48)
 - Gillespie, J. Phys. Chem. 81, 2340 (1977): <http://www.caam.rice.edu/~cox/gillespie.pdf>
 
+## Files
+
+| File | Content |
+|---|---|
+| [`functions.py`](functions.py) | Long functions: samplers, simulations, analysis and plotting helpers (`save_figure`, `KUL_BLUES`). |
+| [`code.ipynb`](code.ipynb) | Runs the functions: parameters, data, figures and numbers for the report, one section per sub-question. |
+| [`figures/`](figures/) | Saved plots (`.png` + `.pdf`) used in the report. |
+
+The module is called `functions.py` and not `code.py`, because a `code.py` would hide
+Python's built-in `code` module, which IPython/Jupyter need. Thanks to
+`%autoreload 2`, edits to `functions.py` are picked up by the notebook without a kernel restart.
+
 ## Deliverables for the report
 
 - Phase-plane trajectory (with deterministic orbit/fixed point for comparison) and time series.

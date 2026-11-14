@@ -40,6 +40,18 @@ from uniform random numbers in $[0,1]$, using two methods:
 - Theory: [Ch. 1 — Calculation of integrals by Monte Carlo, p. 3](../../Coursenotes/monte_carlo_2025.pdf#page=3)
 - Slides: [`MCarlo-2024.pdf`](../../Coursenotes/MCarlo-2024.pdf)
 
+## Files
+
+| File | Content |
+|---|---|
+| [`functions.py`](functions.py) | Long functions: samplers, simulations, analysis and plotting helpers (`save_figure`, `KUL_BLUES`). |
+| [`code.ipynb`](code.ipynb) | Runs the functions: parameters, data, figures and numbers for the report, one section per sub-question. |
+| [`figures/`](figures/) | Saved plots (`.png` + `.pdf`) used in the report. |
+
+The module is called `functions.py` and not `code.py`, because a `code.py` would hide
+Python's built-in `code` module, which IPython/Jupyter need. Thanks to
+`%autoreload 2`, edits to `functions.py` are picked up by the notebook without a kernel restart.
+
 ## Deliverables for the report
 
 - Histograms (normalized as densities) of each sample, overlaid with the exact $f(x)$; state $N$ and bin width.

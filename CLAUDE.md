@@ -21,7 +21,8 @@ Coursenotes/
 Exercises/
   4.XX-short-name/
     README.md            # question, topics, links, deliverables, notes, results log
-    *.py / *.ipynb       # code for that exercise
+    functions.py         # long functions (samplers, simulations, analysis, save_figure)
+    code.ipynb           # imports functions.py, runs it, holds the data/figures
     figures/             # generated plots (png/pdf) used in the report
 report/
   main.tex               # kultem class setup, title page fields, TOC, \input of all sections, bibliography
@@ -53,6 +54,10 @@ When adding code or results, keep them inside that exercise's folder.
 - **Language:** Python 3 with `numpy`, `matplotlib` (and `scipy` for fits). Use `numba`
   for the hot loops of lattice/particle simulations (Ising, Potts, Kawasaki, hard disks)
   when plain numpy is too slow. Ask before introducing other dependencies.
+- **Code layout:** put functions (anything longer than a few lines) in the exercise's
+  `functions.py`; `code.ipynb` only sets parameters, calls them, plots and saves with
+  `save_figure(fig, name)`. Its first cell uses `%autoreload 2` and `from functions import *`.
+  Never name a module `code.py` (it hides the stdlib `code` module and breaks IPython).
 - **Reproducibility:** use `rng = np.random.default_rng(seed)` with an explicit seed;
   never the legacy global `np.random.*` state. Put all parameters at the top of a script
   (or in a config cell) so they can be quoted in the report.

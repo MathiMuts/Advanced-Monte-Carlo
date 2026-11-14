@@ -30,6 +30,18 @@ A *non-negative vector* has all entries $\ge 0$.
 - Problem statement: [notes p. 35](../../Coursenotes/monte_carlo_2025.pdf#page=35)
 - Note: §2.1 states a proposition "proven during the exercise session" — this exercise.
 
+## Files
+
+| File | Content |
+|---|---|
+| [`functions.py`](functions.py) | Long functions: samplers, simulations, analysis and plotting helpers (`save_figure`, `KUL_BLUES`). |
+| [`code.ipynb`](code.ipynb) | Runs the functions: parameters, data, figures and numbers for the report, one section per sub-question. |
+| [`figures/`](figures/) | Saved plots (`.png` + `.pdf`) used in the report. |
+
+The module is called `functions.py` and not `code.py`, because a `code.py` would hide
+Python's built-in `code` module, which IPython/Jupyter need. Thanks to
+`%autoreload 2`, edits to `functions.py` are picked up by the notebook without a kernel restart.
+
 ## Deliverables for the report
 
 - Clean written proofs of (a)–(d). Optionally a numerical illustration (random stochastic matrix, its spectrum in the complex plane inside the unit circle, convergence of $P^n w$).

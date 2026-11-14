@@ -73,7 +73,8 @@ Coursenotes/            course notes, slides and exam instructions
 Exercises/
   4.XX-short-name/
     README.md           question, relevant topics, links, deliverables, results log
-    *.py / *.ipynb      simulation code
+    functions.py        long functions (samplers, simulations, analysis, plot helpers)
+    code.ipynb          runs functions.py: parameters, data, figures for the report
     figures/            generated plots for the report
 report/                 LaTeX source of the report, KU Leuven template (see report/README.md)
 CLAUDE.md               instructions for Claude Code (AI assistant) in this repo
@@ -87,5 +88,9 @@ Code is written in Python 3:
 pip install numpy scipy matplotlib numba
 ```
 
-Each exercise is self-contained; run the scripts from inside the exercise folder.
+Each exercise is self-contained: the long functions are in `functions.py` and the
+notebook `code.ipynb` (`from functions import *`, plus `numpy` and `matplotlib`) runs them,
+so data and figures stay in the notebook. Open the notebook from inside its exercise folder.
+The module is not called `code.py` because that would hide Python's built-in `code`
+module, which IPython/Jupyter need.
 Random seeds are fixed so results are reproducible.

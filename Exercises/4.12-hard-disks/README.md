@@ -41,6 +41,18 @@ For hard disks $g(r) = 0$ for $r < 2\sigma$; $g\approx 1$ beyond for a dilute ga
 - Problem statement: [notes p. 44](../../Coursenotes/monte_carlo_2025.pdf#page=44), Fig. 15 on [p. 46](../../Coursenotes/monte_carlo_2025.pdf#page=46)
 - Footnote 25 (p. 46): average $g(r)$ over many equilibrated configurations; **validate the $g(r)$ code on an ideal gas** (random points must give $g=1$).
 
+## Files
+
+| File | Content |
+|---|---|
+| [`functions.py`](functions.py) | Long functions: samplers, simulations, analysis and plotting helpers (`save_figure`, `KUL_BLUES`). |
+| [`code.ipynb`](code.ipynb) | Runs the functions: parameters, data, figures and numbers for the report, one section per sub-question. |
+| [`figures/`](figures/) | Saved plots (`.png` + `.pdf`) used in the report. |
+
+The module is called `functions.py` and not `code.py`, because a `code.py` would hide
+Python's built-in `code` module, which IPython/Jupyter need. Thanks to
+`%autoreload 2`, edits to `functions.py` are picked up by the notebook without a kernel restart.
+
 ## Deliverables for the report
 
 - Derivation of $\eta_\text{max}$ (hexagonal packing).
