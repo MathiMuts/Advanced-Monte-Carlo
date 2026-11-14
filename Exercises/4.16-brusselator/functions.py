@@ -15,6 +15,19 @@ KUL_BLUES = ["#1FABD5", "#1D8DB0", "#116E8A"]
 FIG_DIR = Path(__file__).resolve().parent / "figures"
 
 
+def set_plot_style():
+    # sans-serif everywhere (also in the math), and TrueType fonts in the pdf
+    # so the report does not end up with Type 3 fonts
+    plt.rcParams.update({
+        "font.family": "sans-serif",
+        "mathtext.fontset": "dejavusans",
+        "pdf.fonttype": 42,
+        "font.size": 10,
+        "axes.prop_cycle": plt.cycler(color=KUL_BLUES),
+        "figure.dpi": 110,
+    })
+
+
 def save_figure(fig, name):
     """Save a figure to figures/<name>.png and figures/<name>.pdf."""
     FIG_DIR.mkdir(exist_ok=True)
