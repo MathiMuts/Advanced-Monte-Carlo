@@ -50,7 +50,7 @@ reactions).
 | 4.1 | [Non-uniform random numbers](Exercises/4.01-non-uniform-random-numbers/) | yes | inverse CDF, hit-and-miss | 🟨 in progress |
 | 4.2 | [Gaussian RNG](Exercises/4.02-gaussian-rng/) | yes | Box–Muller | 🟨 code done, report todo |
 | 4.3 | [Monte Carlo integration (I)](Exercises/4.03-mc-integration-1/) | yes | importance sampling, $\sigma^2\sim 1/N$ | 🟨 code done, report todo |
-| 4.4 | [Monte Carlo integration (II)](Exercises/4.04-mc-integration-2-metropolis/) | yes | Metropolis, equilibration | ⬜ todo |
+| 4.4 | [Monte Carlo integration (II)](Exercises/4.04-mc-integration-2-metropolis/) | yes | Metropolis, equilibration | 🟨 code done, report todo |
 | 4.5 | [Stochastic matrices](Exercises/4.05-stochastic-matrices/) | yes | Markov chains, eigenvalues (analytical) | ⬜ todo |
 | 4.6 | [Detailed balance](Exercises/4.06-detailed-balance/) | yes | detailed vs. global balance (analytical) | ⬜ todo |
 | 4.7 | [Ising model: uniform sampling](Exercises/4.07-ising-uniform-sampling/) | yes | uniform sampling, hit-and-miss, reweighting | ⬜ todo |
