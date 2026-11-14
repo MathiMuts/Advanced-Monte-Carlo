@@ -1,0 +1,26 @@
+Updated on October 23, 2026
+
+Dear students,
+The exam schedule for the academic year 2026–2027 will be sent to you separately.
+
+## Assignment
+You are required to solve problems 4.1–4.8 and 4.12–4.16 from the lecture notes. In addition, you should solve at least one of problems 4.9, 4.10, and 4.11.
+You are welcome to go beyond these requirements and explore additional problems or systems if you wish.
+Once you have completed the assignment, prepare a short report presenting your solutions and the results of your simulations. There is no strict page limit, but approximately 25 pages should be sufficient. Please compile everything into a single PDF file and upload it to Toledo at least one day before your exam.
+Your report should include graphs showing the results of your simulations, accompanied by brief explanatory text. Make sure that all plotted quantities are clearly identified, that the axes are properly labelled, and that you describe the relevant simulation details, including the parameters used, the number of samples, and any other information necessary to understand and interpret your results.
+
+## Exam format
+The exam consists of a written part followed by an oral part, both taking place on the same day.
+During the written part, you will answer a few questions based on the material covered in the lecture notes. You will work on paper, without access to books, lecture notes, or any other materials.
+For the oral part, which will follow you should bring your written solutions. We will discuss these solutions together with your simulation report for approximately 15–20 minutes. We will go through the assignment, and I will ask you questions about your solutions, your simulations, and the underlying theoretical concepts.
+
+I hope these instructions are clear. If you have any questions, please do not hesitate to contact me.
+
+Best regards,
+Enrico Carlon
+-------
+## Additional Information
+1. There are two official assignments in Toledo. In one you should upload the report, in the other your codes. Sometimes I check the codes during the exam. If you want, you can (optionally) bring a laptop with you at the exam to show how the codes run.
+2. Please revise carefully the assignments and the theory before the exam.
+3. Do not hesitate to contact me in the case you need explanations about the assignments or the theory.
+4. Use of AI is allowed, but please add a statement at the end of your report explaining for which purposes you have used it.  It is always good to try coding by yourself and get AI support when needed.
