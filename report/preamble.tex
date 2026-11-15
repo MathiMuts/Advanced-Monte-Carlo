@@ -2,6 +2,10 @@
 % Loaded from main.tex after kultem.sty (kul-template skill).
 % Do not edit kultem.sty itself; put additions here.
 
+% Type 1 (vector) versions of the cmbright math fonts used by kultem. Without this map
+% pdflatex embeds bitmap Type 3 fonts for the math letters and symbols.
+\pdfmapfile{+hfbright.map}
+
 % ---------- general packages ----------
 \usepackage{calc}                       % needed by \kulbox (\linewidth-2\fboxsep)
 \usepackage{amsmath,amssymb,mathtools}

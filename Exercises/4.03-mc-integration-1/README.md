@@ -2,7 +2,7 @@
 
 | Required | Type | Problem in notes | Status |
 |---|---|---|---|
-| ✅ yes | analytical + simulation | [p. 33–34](../../Coursenotes/monte_carlo_2025.pdf#page=33) | 🟨 code done, report todo |
+| ✅ yes | analytical + simulation | [p. 33–34](../../Coursenotes/monte_carlo_2025.pdf#page=33) | ✅ done (in report) |
 
 ## Question
 
